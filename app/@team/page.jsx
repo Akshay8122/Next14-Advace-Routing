@@ -2,7 +2,7 @@
 import { deleteCookie } from "../lib/auth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import YouTubeEmbed from "../lib/getIframeVideo";
 export default function Team() {
   const router = useRouter();
   return (
@@ -24,7 +24,10 @@ export default function Team() {
             Welcome to parallel route
           </h2>
         </div>
-        <div className="mt-32">
+        <div className="mt-5">
+          <YouTubeEmbed videoId="gfU1iZnjRZM" width={300} height={300} />
+          <br />
+
           <Image
             src={
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuEynx9zEbXCWExlihi4xX1NJ-pkFNu4Fvzo_cONavRg&s"
@@ -34,7 +37,7 @@ export default function Team() {
             width={800}
             quality={100}
             // fill
-            // sizes="(min-width: 808px) 50vw, 100vw"
+            sizes="(min-width: 808px) 50vw, 100vw"
             style={{
               objectFit: "cover",
             }}
