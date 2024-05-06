@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 
 export default function Page() {
-  cookies();
+  // cookies();
   return (
     <section>
       <h2>App router</h2>

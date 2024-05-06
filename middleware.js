@@ -1,13 +1,19 @@
-"use server";
 import { NextResponse } from "next/server";
+import { updateSession } from "./app/lib/basicAuth";
+import { auth } from "./auth";
 
-export default async function middleware(request) {
+const middleware = async (request) => {
   const isAuthenticated = request.cookies.get("isLoggedIn");
   if (isAuthenticated) {
     return NextResponse.next();
   }
-  return NextResponse.redirect(new URL("/login", request.url));
-}
+  return (
+    (await updateSession(request)) ||
+    NextResponse.redirect(new URL("/login", request.url))
+  );
+};
+
+export { auth, middleware as default };
 
 export const config = {
   matcher: "/",

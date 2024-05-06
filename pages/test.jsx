@@ -8,9 +8,9 @@ export function getStaticProps() {
 
 export default function Page({ date }) {
   return (
-    <sectio>
+    <section>
       Page Router
       <p>{date}</p>
-    </sectio>
+    </section>
   );
 }

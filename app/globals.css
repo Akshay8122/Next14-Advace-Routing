@@ -17,6 +17,8 @@
 }
 
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
   background-color: whitesmoke;
   scrollbar-width: thin; /* For Firefox */
   -webkit-scrollbar-width: thin; /* For Chrome, Safari, and Opera */

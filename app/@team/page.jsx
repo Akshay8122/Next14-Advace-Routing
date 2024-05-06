@@ -1,8 +1,10 @@
 "use client";
-import { deleteCookie } from "../lib/auth";
+import { deleteCookie } from "../lib/cookieBasedAuth";
+import { getSignOut } from "../lib/getSignOut";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import YouTubeEmbed from "../lib/getIframeVideo";
+
 export default function Team() {
   const router = useRouter();
   return (
@@ -10,9 +12,11 @@ export default function Team() {
       <div className="w-6/12 bg-gray-200">
         <div className="flex justify-end">
           <button
+            type="submit"
             className="bg-red-500 m-3  rounded-md w-20 p-1.5  font-bold  text-white"
-            onClick={() => {
+            onClick={async () => {
               deleteCookie();
+              getSignOut();
               router.push("/login");
             }}
           >
