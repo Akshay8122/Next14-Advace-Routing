@@ -15,9 +15,10 @@ export default function Team() {
             type="submit"
             className="bg-red-500 m-3  rounded-md w-20 p-1.5  font-bold  text-white"
             onClick={async () => {
-              deleteCookie();
-              getSignOut();
+              await getSignOut();
+              await deleteCookie();
               router.push("/login");
+              logout();
             }}
           >
             Logout

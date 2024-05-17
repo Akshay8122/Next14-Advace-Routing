@@ -7,7 +7,7 @@ function SignIn() {
     <form
       action={async () => {
         "use server";
-        await signIn("github");
+        await signIn("github", { redirect: true, redirectTo: "/" });
         return NextResponse.next();
       }}
     >

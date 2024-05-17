@@ -10,4 +10,5 @@ export async function auth() {
 
 export async function deleteCookie() {
   cookies().delete("isLoggedIn");
+  if (cookies().get("session")) cookies().delete("session");
 }
