@@ -8,7 +8,6 @@ function SignIn() {
       action={async () => {
         "use server";
         await signIn("github", { redirect: true, redirectTo: "/" });
-        return NextResponse.next();
       }}
     >
       <p className="font-bold text-black">
