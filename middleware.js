@@ -4,7 +4,7 @@ import { auth } from "./auth";
 
 const middleware = async (request) => {
   const isAuthenticated = request.cookies.get("isLoggedIn");
-  const authToken = await request.cookies.get("authjs.session-token");
+  const authToken = await request.cookies.get("authjs.csrf-token");
 
   if (isAuthenticated || authToken) {
     return NextResponse.next();
