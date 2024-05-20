@@ -18,7 +18,6 @@ export default function Team() {
               await getSignOut();
               await deleteCookie();
               router.push("/login");
-              logout();
             }}
           >
             Logout
